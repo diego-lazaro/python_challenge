@@ -1,7 +1,7 @@
 import os
 import csv
 
-#setting libraries and variables for place holders
+#set libraries and variables for place holders
 
 profit_loss = []
 month_name = []
@@ -9,7 +9,7 @@ changes = []
 month_change = []
 counter = 0
 
-#opening the files needed for specific data
+#open files for specific data
 
 bank_data = os.path.join("C:/Users/sanch/OneDrive/Desktop/budget_data.csv")
 
@@ -17,12 +17,12 @@ with open(bank_data, 'r') as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
 
-#filtering out the header lines
+#filter header lines out
 
     csv_header = next(csvreader)
 
-#starting loop, collecting intial values for loop calculations
-#adding str values to month list
+#start loops for collecting intial values and calculations
+#add strings to month list values
 
     for row in csvreader:
 
@@ -36,7 +36,7 @@ with open(bank_data, 'r') as csvfile:
             
             month_name.append(str(row[0]))
 
-#adding values to lists and calculating changes 
+#add values for list and calculations 
         else:
             
             profit_loss.append(int(row[1]))
@@ -49,11 +49,13 @@ with open(bank_data, 'r') as csvfile:
             
             set_value = int(row[1])
 
-#using python tools to extract exact information needed for requested calculations
+#extract information for calculations
 
     total_months = len(month_name)
     profit_losses = sum(profit_loss)
-#for profit_change to record correctly you need to add the rounding to 2 decimal places with , 2
+    
+#record profit_change by correctly adding and rounding to 2 decimal places with , 2
+
     profit_change = round(sum(changes) / len(month_change), 2)
     greatest_inc = max(changes)
     greatest_increase_profits = changes.index(greatest_inc)
