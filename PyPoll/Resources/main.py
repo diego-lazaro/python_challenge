@@ -15,7 +15,7 @@ winning_votes = 0
 
 #opening the files needed for specific data
 
-poll_data = os.path.join("C:/Users/sanch/OneDrive/Desktop/election_data.csv")
+poll_data = os.path.join("election_data.csv")
 
 with open(poll_data, 'r') as csvfile:
 
