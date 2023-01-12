@@ -11,7 +11,7 @@ counter = 0
 
 #open files for specific data
 
-bank_data = os.path.join("pybank", "resources", "budget_data.csv")
+bank_data = os.path.join("PyBank", "resources", "budget_data.csv")
 
 with open(bank_data, 'r') as csvfile:
 
